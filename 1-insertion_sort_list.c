@@ -7,38 +7,35 @@
 */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current_node, *check_node, *sorted_node;
+	listint_t *current, *check_node, *next_node;
 
-	if (*list == NULL || (*list)->next || NULL)
+	if (*list == NULL || list == NULL || (*list)->next || NULL)
 		return;
 
 	/* set head to current */
-	current_node = (*list);
+	current = (*list);
 
 	/* loop from the second node to the last node */
-	while (current_node != NULL)
+	for (current = (*list)->next; current != NULL; current = next_node)
 	{
-		check_node = current_node;
-		sorted_node = (*list);
-		current_node = current_node->next;
+		next_node = current->next;
+		check_node = current->prev;
 
-		if (current_node->n > check_node->n)
+		/* loop and insert node in the sorted part*/
+		while (check_node != NULL && current->n < check_node->n)
 		{
-			while (sorted_node != NULL)
-			{
-				/* loop and inserted in the sorted part */
-				if (sorted_node->n > check_node->n)
-				{
-					check_node->next = sorted_node;
-					check_node->prev = sorted_node->prev;
-					current_node->prev->next = current_node->next;
-					current_node->next->prev = current_node->prev;
-					/* free the current node and set it back to the head node*/
-					print_list(*list);
-					free(current_node);
-					current_node = (*list);
-				}
-			}
+			check_node->next = current->next;
+			if (current->next != NULL)
+				current->next->prev = check_node;
+			current->prev = check_node->prev;
+			current->next = check_node;
+
+			if (check_node->prev != NULL)
+				check_node->prev->next = current;
+			else
+				*list = current;
+			check_node->prev = current;
+			check_node = current->prev;
 		}
 	}
 }
