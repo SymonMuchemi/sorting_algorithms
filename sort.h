@@ -20,7 +20,7 @@ typedef struct listint_s
 } listint_t;
 
 void insertion_sort(int arr[], int n);
-void swap(int xp, int yp);
+void swap(int x, int y);
 listint_t *create_listint(const int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);

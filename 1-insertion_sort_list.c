@@ -1,6 +1,18 @@
 #include "sort.h"
 
 /**
+ * swap - switches the position of two array elements
+ * @x: the first element
+ * @y: the second element
+ * Return: nothing
+*/
+void swap(int x, int y)
+{
+	x = x + y;
+	y = x - y;
+	x = x - y;
+}
+/**
  * insertion_sort_list - sort a doubly linked list using insertion sort
  * @list: the doubly linked list
  * Return: nothing
