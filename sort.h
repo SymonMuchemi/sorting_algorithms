@@ -21,6 +21,7 @@ typedef struct listint_s
 
 void insertion_sort(int arr[], int n);
 void swap(int x, int y);
+int partition(int *array, int lower, int upper, size_t size);
 listint_t *create_listint(const int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
