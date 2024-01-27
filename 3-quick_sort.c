@@ -53,8 +53,8 @@ void quick_sort_recursive(int *array, int lower, int upper, size_t size)
 	if (lower < upper)
 	{
 		location = partition(array, lower, upper, size);
-		quick_sort_recursive(array, lower, (location - 1), size);
 		quick_sort_recursive(array, (location + 1), upper, size);
+		quick_sort_recursive(array, lower, (location - 1), size);
 	}
 }
 

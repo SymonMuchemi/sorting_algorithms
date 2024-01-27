@@ -19,6 +19,8 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+void mergesort(int *arr, int lb, int ub);
+void merge(int *arr, int lb, int mid, int ub);
 void insertion_sort(int arr[], int n);
 void swap(int x, int y);
 int partition(int *array, int lower, int upper, size_t size);
