@@ -18,3 +18,5 @@ This repo is part of my software engineering course at [ALX](https://www.alxafri
 ## Contribution
 
 To make any changes to the code in this repository, feel free to make a pull request.
+
+This is fun

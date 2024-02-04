@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /**
- * main - Entry point
+ * main - Entry point for the prpgram
  *
  * Return: Always 0
  */

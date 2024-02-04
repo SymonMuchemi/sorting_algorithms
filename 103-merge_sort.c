@@ -80,5 +80,7 @@ void mergesort(int *arr, int lb, int ub)
 */
 void merge_sort(int *array, size_t size)
 {
-	mergesort(array, 0, size);
+	int ub = (int)size - 1;
+
+	mergesort(array, 0, ub);
 }
